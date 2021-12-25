@@ -14,35 +14,31 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name="prices")
-public class Price implements Serializable{
+@Table(name = "prices")
+public class Price implements Serializable {
 
 	private static final long serialVersionUID = -5323149401158101756L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
-	@Column(name="start_date", columnDefinition = "TIMESTAMP")
-	private LocalDateTime startDate;
-	
-	@Column(name="end_date", columnDefinition = "TIMESTAMP")
-	private LocalDateTime endDate;
-	
-	private String currency;
-	
-	@Column(name="product_id")
-	private Long product;
-	
-	@Column(name="brand_id")
-	private Long brand;
-	
-	
-	private Integer priority;
-	
-	
-	private Double value;
-	
 
-	
+	@Column(name = "start_date", columnDefinition = "TIMESTAMP")
+	private LocalDateTime startDate;
+
+	@Column(name = "end_date", columnDefinition = "TIMESTAMP")
+	private LocalDateTime endDate;
+
+	private String currency;
+
+	@Column(name = "product_id")
+	private Long product;
+
+	@Column(name = "brand_id")
+	private Long brand;
+
+	private Integer priority;
+
+	private Double value;
+
 }

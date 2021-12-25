@@ -21,32 +21,29 @@ public class PriceController {
 
 	@Autowired
 	private IPriceService priceService;
-	
+
 	private static final DateTimeFormatter dt = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-	
+
 	@GetMapping("/price")
 	@ResponseStatus(HttpStatus.OK)
-	public PriceDto getPriceByParams(@RequestParam(name = "start_date", required = true) 
-	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime startDate,
-	@RequestParam(name = "product_id", required = true) 
-	Long productId, @RequestParam(name = "brand_id", required = true) 
-	Long brandId){
+	public PriceDto getPriceByParams(
+			@RequestParam(name = "start_date", required = true) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime startDate,
+			@RequestParam(name = "product_id", required = true) Long productId,
+			@RequestParam(name = "brand_id", required = true) Long brandId) {
 		return priceService.findByParams(startDate, productId, brandId);
 	}
-	
-	// Este endpoint es igual al anterior pero aceptando un string con formato yyyy-MM-dd HH:mm:ss
-	
+
+	// Este endpoint es igual al anterior pero aceptando un string con formato
+	// yyyy-MM-dd HH:mm:ss
+
 	@GetMapping("/v2/price")
 	@ResponseStatus(HttpStatus.OK)
-	public PriceDto getPriceByParams(@RequestParam(name = "start_date", required = true) 
-	String startDate,
-	@RequestParam(name = "product_id", required = true) 
-	Long productId, @RequestParam(name = "brand_id", required = true) 
-	Long brandId){
-		
-		
+	public PriceDto getPriceByParams(@RequestParam(name = "start_date", required = true) String startDate,
+			@RequestParam(name = "product_id", required = true) Long productId,
+			@RequestParam(name = "brand_id", required = true) Long brandId) {
+
 		LocalDateTime startDateTime = LocalDateTime.parse(startDate, dt);
-		
+
 		return priceService.findByParams(startDateTime, productId, brandId);
 	}
 }

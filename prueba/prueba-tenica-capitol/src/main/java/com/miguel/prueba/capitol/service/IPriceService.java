@@ -6,6 +6,6 @@ import com.miguel.prueba.capitol.models.dto.PriceDto;
 
 public interface IPriceService {
 
-	public PriceDto findByParams(LocalDateTime startDate, Long productId, Long brandId);	
-	
+	public PriceDto findByParams(LocalDateTime startDate, Long productId, Long brandId);
+
 }
