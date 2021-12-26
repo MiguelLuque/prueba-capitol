@@ -1,0 +1,398 @@
+{
+	"info": {
+		"_postman_id": "780b39df-5a4a-46f8-b1fc-b4c414983771",
+		"name": "Prueba-Capitol",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Testing",
+			"item": [
+				{
+					"name": "Case 1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var expectedResponse = {",
+									"   \"id\": 1,",
+									"    \"startDate\": \"2020-06-14 00:00\",",
+									"    \"endDate\": \"2020-12-31 23:59\",",
+									"    \"product\": 35455,",
+									"    \"brand\": 1,",
+									"    \"value\": 35.5",
+									"};",
+									"",
+									"pm.test(\"Payload must be valid and have a body\", function () { ",
+									"     pm.response.to.be.ok; // equivalente a decir que valide que sea 200",
+									"     pm.response.to.be.withBody; // body tiene que exitir",
+									"     pm.response.to.be.json; // además que sea un JSON válido",
+									"});",
+									"",
+									"pm.test(\"Validate payload with expected response\", function () { ",
+									"    pm.expect(pm.response.json()).to.eql(expectedResponse);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8001/api/price?start_date=2020-06-14T10:00:00&product_id=35455&brand_id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"price"
+							],
+							"query": [
+								{
+									"key": "start_date",
+									"value": "2020-06-14T10:00:00"
+								},
+								{
+									"key": "product_id",
+									"value": "35455"
+								},
+								{
+									"key": "brand_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Case 2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var expectedResponse = {",
+									"   \"id\": 2,",
+									"    \"startDate\": \"2020-06-14 15:00\",",
+									"    \"endDate\": \"2020-06-14 18:30\",",
+									"    \"product\": 35455,",
+									"    \"brand\": 1,",
+									"    \"value\": 25.45",
+									"};",
+									"",
+									"pm.test(\"Payload must be valid and have a body\", function () { ",
+									"     pm.response.to.be.ok; // equivalente a decir que valide que sea 200",
+									"     pm.response.to.be.withBody; // body tiene que exitir",
+									"     pm.response.to.be.json; // además que sea un JSON válido",
+									"});",
+									"",
+									"pm.test(\"Validate payload with expected response\", function () { ",
+									"    pm.expect(pm.response.json()).to.eql(expectedResponse);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8001/api/price?start_date=2020-06-14T16:00:00&product_id=35455&brand_id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"price"
+							],
+							"query": [
+								{
+									"key": "start_date",
+									"value": "2020-06-14T16:00:00"
+								},
+								{
+									"key": "product_id",
+									"value": "35455"
+								},
+								{
+									"key": "brand_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Case 3",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var expectedResponse = {",
+									"   \"id\": 1,",
+									"    \"startDate\": \"2020-06-14 00:00\",",
+									"    \"endDate\": \"2020-12-31 23:59\",",
+									"    \"product\": 35455,",
+									"    \"brand\": 1,",
+									"    \"value\": 35.5",
+									"};",
+									"",
+									"pm.test(\"Payload must be valid and have a body\", function () { ",
+									"     pm.response.to.be.ok; // equivalente a decir que valide que sea 200",
+									"     pm.response.to.be.withBody; // body tiene que exitir",
+									"     pm.response.to.be.json; // además que sea un JSON válido",
+									"});",
+									"",
+									"pm.test(\"Validate payload with expected response\", function () { ",
+									"    pm.expect(pm.response.json()).to.eql(expectedResponse);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8001/api/price?start_date=2020-06-14T21:00:00&product_id=35455&brand_id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"price"
+							],
+							"query": [
+								{
+									"key": "start_date",
+									"value": "2020-06-14T21:00:00"
+								},
+								{
+									"key": "product_id",
+									"value": "35455"
+								},
+								{
+									"key": "brand_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Case 4",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var expectedResponse = {",
+									"   \"id\": 3,",
+									"    \"startDate\": \"2020-06-15 00:00\",",
+									"    \"endDate\": \"2020-06-15 11:00\",",
+									"    \"product\": 35455,",
+									"    \"brand\": 1,",
+									"    \"value\": 30.5",
+									"};",
+									"",
+									"pm.test(\"Payload must be valid and have a body\", function () { ",
+									"     pm.response.to.be.ok; // equivalente a decir que valide que sea 200",
+									"     pm.response.to.be.withBody; // body tiene que exitir",
+									"     pm.response.to.be.json; // además que sea un JSON válido",
+									"});",
+									"",
+									"pm.test(\"Validate payload with expected response\", function () { ",
+									"    pm.expect(pm.response.json()).to.eql(expectedResponse);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8001/api/price?start_date=2020-06-15T10:00:00&product_id=35455&brand_id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"price"
+							],
+							"query": [
+								{
+									"key": "start_date",
+									"value": "2020-06-15T10:00:00"
+								},
+								{
+									"key": "product_id",
+									"value": "35455"
+								},
+								{
+									"key": "brand_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Case 5",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var expectedResponse = {",
+									"   \"id\": 4,",
+									"    \"startDate\": \"2020-06-15 16:00\",",
+									"    \"endDate\": \"2020-12-31 23:59\",",
+									"    \"product\": 35455,",
+									"    \"brand\": 1,",
+									"    \"value\": 38.85",
+									"};",
+									"",
+									"pm.test(\"Payload must be valid and have a body\", function () { ",
+									"     pm.response.to.be.ok; // equivalente a decir que valide que sea 200",
+									"     pm.response.to.be.withBody; // body tiene que exitir",
+									"     pm.response.to.be.json; // además que sea un JSON válido",
+									"});",
+									"",
+									"pm.test(\"Validate payload with expected response\", function () { ",
+									"    pm.expect(pm.response.json()).to.eql(expectedResponse);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8001/api/price?start_date=2020-06-16T21:00:00&product_id=35455&brand_id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"price"
+							],
+							"query": [
+								{
+									"key": "start_date",
+									"value": "2020-06-16T21:00:00"
+								},
+								{
+									"key": "product_id",
+									"value": "35455"
+								},
+								{
+									"key": "brand_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Endpoints",
+			"item": [
+				{
+					"name": "Price by params localDateTime applicationDate",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8001/api/price?start_date=2020-06-14T18:31:00&product_id=35455&brand_id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"price"
+							],
+							"query": [
+								{
+									"key": "start_date",
+									"value": "2020-06-14T18:31:00"
+								},
+								{
+									"key": "product_id",
+									"value": "35455"
+								},
+								{
+									"key": "brand_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Price by params String applicationDate",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8001/api/v2/price?start_date=2020-06-14 00:00:00&product_id=35455&brand_id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"api",
+								"v2",
+								"price"
+							],
+							"query": [
+								{
+									"key": "start_date",
+									"value": "2020-06-14 00:00:00"
+								},
+								{
+									"key": "product_id",
+									"value": "35455"
+								},
+								{
+									"key": "brand_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
