@@ -9,11 +9,20 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 
+/**
+ * The Class ExceptionController.
+ */
 @ControllerAdvice
 public class ExceptionController {
-
-	// Se lanzará una excepción contralada cuando reciba otra que no haya sido capturada por otro de los métodos
 	
+	/**
+	 * Generic exception.
+	 * 
+	 * Se lanzará una excepción contralada cuando reciba otra que no haya sido capturada por otro de los métodos
+	 *
+	 * @param e the e
+	 * @return the response entity
+	 */
 	@ExceptionHandler(value = Exception.class)
 	public ResponseEntity<GenericErrorResponse> genericException(Exception e) {
 
@@ -23,8 +32,15 @@ public class ExceptionController {
 
 	}
 	
-	// Lanzará una excepción cuando no logre recuperar un price 
 
+	/**
+	 * Price not found exception. 
+	 * 
+	 * Lanzará una excepción cuando no logre recuperar un price 
+	 *
+	 * @param e the e
+	 * @return the response entity
+	 */
 	@ExceptionHandler(value = NoSuchElementException.class)
 	public ResponseEntity<GenericErrorResponse> priceNotFoundException(NoSuchElementException e) {
 
@@ -34,8 +50,15 @@ public class ExceptionController {
 
 	}
 	
-	// Lanzará una excepción cuando no se informen los parámetros correctamente
 
+	/**
+	 * Bad request exception.
+	 * 
+	 * Lanzará una excepción cuando no se informen los parámetros correctamente
+	 *
+	 * @param e the e
+	 * @return the response entity
+	 */
 	@ExceptionHandler({MissingServletRequestParameterException.class, MethodArgumentTypeMismatchException.class })
 	public ResponseEntity<GenericErrorResponse> badRequestException(Exception e) {
 

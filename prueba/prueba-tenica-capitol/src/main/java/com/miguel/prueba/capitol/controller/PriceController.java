@@ -15,6 +15,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.miguel.prueba.capitol.models.dto.PriceDto;
 import com.miguel.prueba.capitol.service.IPriceService;
 
+/**
+ * The Class PriceController.
+ */
 @RestController
 @RequestMapping("/api")
 public class PriceController {
@@ -24,6 +27,14 @@ public class PriceController {
 
 	private static final DateTimeFormatter dt = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
+	/**
+	 * Gets the price by params.
+	 *
+	 * @param startDate the start date
+	 * @param productId the product id
+	 * @param brandId the brand id
+	 * @return the price by params
+	 */
 	@GetMapping("/price")
 	@ResponseStatus(HttpStatus.OK)
 	public PriceDto getPriceByParams(
@@ -33,9 +44,18 @@ public class PriceController {
 		return priceService.findByParams(startDate, productId, brandId);
 	}
 
-	// Este endpoint es igual al anterior pero aceptando un string con formato
-	// yyyy-MM-dd HH:mm:ss
+	
 
+	/**
+	 * Gets the price by params.
+	 * 
+	 * Este endpoint es igual al anterior pero aceptando un string con formato
+	 *
+	 * @param startDate the start date
+	 * @param productId the product id
+	 * @param brandId the brand id
+	 * @return the price by params
+	 */
 	@GetMapping("/v2/price")
 	@ResponseStatus(HttpStatus.OK)
 	public PriceDto getPriceByParams(@RequestParam(name = "start_date", required = true) String startDate,

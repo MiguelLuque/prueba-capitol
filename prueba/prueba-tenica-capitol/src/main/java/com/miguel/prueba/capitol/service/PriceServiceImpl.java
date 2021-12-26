@@ -20,12 +20,21 @@ public class PriceServiceImpl implements IPriceService {
 	@Autowired
 	private PriceMapper priceMapper;
 
+	/**
+	 * Find by params.
+	 *
+	 * @param startDate the start date
+	 * @param productId the product id
+	 * @param brandId the brand id
+	 * @return the price dto
+	 */
 	@Override
 	@Transactional(readOnly = true)
 	public PriceDto findByParams(LocalDateTime startDate, Long productId, Long brandId) {
 
-		// Si no encontramos un valor, devuelve una exceción NoSuchElementException pero
-		// se podría lanzar cualquier otra custom
+		/** Si no encontramos un valor, devuelve una exceción NoSuchElementException pero
+		 *  se podría lanzar cualquier otra custom
+		*/ 
 		Price price = priceRepository.findByParams(startDate, productId, brandId).orElseThrow();
 
 		return priceMapper.toDto(price);
