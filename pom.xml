@@ -20,7 +20,16 @@
 	</properties>
 	
 	<dependencies>
-		<!-- 	Dependencias principales -->
+	
+	
+		<!-- Facilita el desarrollo y recude el código 'boilerplate' -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+		
+		
 		
 		<!-- 	Necesario para el desarrollo de api rest -->
 		<dependency>
@@ -53,12 +62,6 @@
 
 		<!-- 	Dependencias de herramientas de desarrollo -->
 		
-		<!-- Facilita el desarrollo y recude el código 'boilerplate' -->
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<optional>true</optional>
-		</dependency>
 		<!-- Facilita el mapeo de entidades dao a dto -->
 		<dependency>
             <groupId>org.mapstruct</groupId>
@@ -115,6 +118,9 @@
                     <compilerArgs>
 		                <compilerArg>
 		                       -Amapstruct.defaultComponentModel=spring
+		                </compilerArg>
+		                <compilerArg>
+		                       -Amapstruct.verbose=true
 		                </compilerArg>
 		            </compilerArgs>
                 </configuration>
